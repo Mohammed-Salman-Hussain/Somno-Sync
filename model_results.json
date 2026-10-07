@@ -1,0 +1,183 @@
+{
+  "dataset_summary": {
+    "total_records": 8500,
+    "features_count": 18,
+    "avg_bedtime_phone_min": 59.2,
+    "avg_sleep_latency_min": 40.7,
+    "avg_sleep_hours": 6.27,
+    "avg_fatigue_score": 3.79,
+    "debt_categories": {
+      "Moderate Debt": 4462,
+      "Mild Deficit": 2004,
+      "Optimal Recovery": 1387,
+      "Severe Sleep Debt": 647
+    },
+    "top_bedtime_apps": {
+      "TikTok / Reels": 2198,
+      "YouTube": 1928,
+      "Instagram / Reddit": 1630,
+      "Streaming (Netflix/Hulu)": 1301,
+      "Messaging / Chat": 847,
+      "News / Reading": 596
+    },
+    "chronotypes": {
+      "Intermediate": 3880,
+      "Night Owl": 2455,
+      "Morning Lark": 2165
+    }
+  },
+  "classification_sleep_debt": {
+    "model_name": "Random Forest Classifier",
+    "accuracy": 96.88,
+    "classes": [
+      "Mild Deficit",
+      "Moderate Debt",
+      "Optimal Recovery",
+      "Severe Sleep Debt"
+    ],
+    "confusion_matrix": [
+      [
+        401,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        880,
+        0,
+        13
+      ],
+      [
+        0,
+        0,
+        277,
+        0
+      ],
+      [
+        0,
+        40,
+        0,
+        89
+      ]
+    ],
+    "metrics": {
+      "macro_f1": 0.935,
+      "weighted_f1": 0.967
+    },
+    "top_features": [
+      {
+        "feature": "total_sleep_hours",
+        "importance": 0.6037
+      },
+      {
+        "feature": "morning_alarm_snoozes",
+        "importance": 0.1553
+      },
+      {
+        "feature": "bedtime_phone_minutes",
+        "importance": 0.0667
+      },
+      {
+        "feature": "chronotype_Night Owl",
+        "importance": 0.042
+      },
+      {
+        "feature": "chronotype_Morning Lark",
+        "importance": 0.0347
+      },
+      {
+        "feature": "screen_brightness_pct",
+        "importance": 0.0182
+      },
+      {
+        "feature": "physical_activity_min",
+        "importance": 0.0162
+      },
+      {
+        "feature": "age",
+        "importance": 0.0146
+      }
+    ]
+  },
+  "regression_sleep_latency": {
+    "model_name": "Random Forest Regressor",
+    "r2_score": 0.8464,
+    "mae_minutes": 5.58,
+    "rmse_minutes": 7.04,
+    "top_features": [
+      {
+        "feature": "bedtime_phone_minutes",
+        "importance": 0.8157
+      },
+      {
+        "feature": "caffeine_post_5pm_mg",
+        "importance": 0.0531
+      },
+      {
+        "feature": "primary_bedtime_app_TikTok / Reels",
+        "importance": 0.0452
+      },
+      {
+        "feature": "screen_brightness_pct",
+        "importance": 0.0279
+      },
+      {
+        "feature": "primary_bedtime_app_News / Reading",
+        "importance": 0.0141
+      },
+      {
+        "feature": "age",
+        "importance": 0.0122
+      },
+      {
+        "feature": "physical_activity_min",
+        "importance": 0.0117
+      },
+      {
+        "feature": "blue_light_filter_active",
+        "importance": 0.0045
+      }
+    ]
+  },
+  "regression_fatigue_score": {
+    "model_name": "Gradient Boosting Regressor",
+    "r2_score": 0.9432,
+    "mae_score": 0.48,
+    "rmse_score": 0.65,
+    "top_features": [
+      {
+        "feature": "morning_alarm_snoozes",
+        "importance": 0.5125
+      },
+      {
+        "feature": "total_sleep_hours",
+        "importance": 0.402
+      },
+      {
+        "feature": "bedtime_phone_minutes",
+        "importance": 0.0445
+      },
+      {
+        "feature": "caffeine_post_5pm_mg",
+        "importance": 0.0245
+      },
+      {
+        "feature": "screen_brightness_pct",
+        "importance": 0.0076
+      },
+      {
+        "feature": "blue_light_filter_active",
+        "importance": 0.0025
+      },
+      {
+        "feature": "physical_activity_min",
+        "importance": 0.0022
+      },
+      {
+        "feature": "age",
+        "importance": 0.0013
+      }
+    ]
+  }
+}
